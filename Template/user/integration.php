@@ -15,8 +15,9 @@
 
     <p class="form-help"><a href="https://github.com/AsamK/signal-cli" target="_blank"><?= t('Help on signal-cli integration') ?></a></p>
 
-    <?= $this->form->label(t('Signal recipient (phone number with country calling code, i.e. the number must start with a "+" sign)'), 'signal_cli_receiver') ?>
+    <?= $this->form->label(t('Signal recipient'), 'signal_cli_receiver') ?>
     <?= $this->form->text('signal_cli_receiver', $values) ?>
+    <p class="form-help"><?= t('Phone number with country calling code, i.e. the number must start with a "+" sign like +4915152222222') ?></p>
 
     <p class="form-help"><a href="https://github.com/stratmaster/kanboard-plugin-signal" target="_blank"><?= t('Help on Signal integration') ?></a></p>
 

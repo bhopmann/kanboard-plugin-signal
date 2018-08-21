@@ -15,8 +15,9 @@
 
     <p class="form-help"><a href="https://github.com/AsamK/signal-cli" target="_blank"><?= t('Help on signal-cli integration') ?></a></p>
 
-    <?= $this->form->label(t('Signal recipient group (group ID in base64 encoding)'), 'signal_cli_group') ?>
+    <?= $this->form->label(t('Signal recipient group'), 'signal_cli_group') ?>
     <?= $this->form->text('signal_cli_group', $values) ?>
+    <p class="form-help"><?= t('Group ID in base64 encoding') ?></p>
 
     <p class="form-help"><a href="https://github.com/stratmaster/kanboard-plugin-signal" target="_blank"><?= t('Help on Signal integration') ?></a></p>
 
