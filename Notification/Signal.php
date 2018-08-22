@@ -209,12 +209,12 @@ class Signal extends Base implements NotificationInterface
           putenv("JAVA_HOME=$signal_java_home_path");
 
           // Call signal-cli without attachment
-          exec("$signal_cli_path --config \"$signal_cli_config\" -u $signal_cli_user send -m \"$message\" $signal_to > /dev/null 2>&1 &");
+          exec("$signal_cli_path --config \"$signal_cli_config\" -u $signal_cli_user send -m \"$message\" $signal_to > /dev/null &");
 
           if ($attachment != '')
           {
-            // Call signal-cli with attachment and remove temporary file
-            exec("($signal_cli_path --config \"$signal_cli_config\" -u $signal_cli_user send -m \"$message_attachment\" $signal_to -a \"$attachment\"; rm -rf \"$signal_tmp_dir/kanboard_signal_plugin\") > /dev/null 2>&1 &");
+              // Call signal-cli with attachment and remove temporary file
+              exec("($signal_cli_path --config \"$signal_cli_config\" -u $signal_cli_user send -m \"$message_attachment\" $signal_to -a \"$attachment\"; rm -rf \"$signal_tmp_dir/kanboard_signal_plugin\") > /dev/null &");
           }
       }
     }

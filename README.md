@@ -60,5 +60,5 @@ Go to **Settings > Integrations > Signal** and fill the forms:
 Troubleshooting
 ---------------
 
-- Enable the Kanboard debug mode
-- All connection errors are recorded in the logs
+- Enable the PHP debug mode
+- All errors are recorded in the logs
