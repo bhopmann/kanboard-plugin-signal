@@ -176,10 +176,18 @@ class Signal extends Base implements NotificationInterface
           $file_path = getcwd()."/data/files/".$eventData['file']['path'];
           $file_name = $eventData['file']['name'];
 
-          mkdir($signal_tmp_dir."/kanboard_signal_plugin");
-          $attachment = $signal_tmp_dir."/kanboard_signal_plugin/".clean($file_name);
-          file_put_contents($attachment, file_get_contents($file_path));
           $message_attachment = '📎 '.$file_name;
+
+          if (is_writable($signal_tmp_dir))
+          {
+              mkdir($signal_tmp_dir."/kanboard_signal_plugin");
+              $attachment = $signal_tmp_dir."/kanboard_signal_plugin/".clean($file_name);
+              file_put_contents($attachment, file_get_contents($file_path));
+          }
+          else
+          {
+              $attachment = $file_path;
+          }
       }
 
       // Add URL
