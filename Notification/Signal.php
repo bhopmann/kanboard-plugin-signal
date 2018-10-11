@@ -128,8 +128,8 @@ class Signal extends Base implements NotificationInterface
 
       // Build message
 
-      $message = "[".htmlspecialchars($proj_name, ENT_NOQUOTES | ENT_IGNORE)."]\n";
-      $message .= htmlspecialchars($title, ENT_NOQUOTES | ENT_IGNORE)."\n";
+      $message = "[".addslashes($proj_name)."]\n";
+      $message .= addslashes($title)."\n";
 
       // Add additional informations
 
@@ -155,20 +155,20 @@ class Signal extends Base implements NotificationInterface
               $subtask_symbol = '🕘 ';
           }
 
-          $message .= " ↳ ".$subtask_symbol . htmlspecialchars($eventData['subtask']['title'], ENT_NOQUOTES | ENT_IGNORE)."\n";
+          $message .= " ↳ ".$subtask_symbol . addslashes($eventData['subtask']['title'])."\n";
       }
 
       elseif (in_array($eventName, $description_events))  // If description available
       {
           if ($eventData['task']['description'] != '')
           {
-              $message .= "✏️ ".htmlspecialchars($eventData['task']['description'], ENT_NOQUOTES | ENT_IGNORE)."\n";
+              $message .= "✏️ ".addslashes($eventData['task']['description'])."\n";
           }
       }
 
       elseif (in_array($eventName, $comment_events))  // If comment available
       {
-          $message .= "💬 ".htmlspecialchars($eventData['comment']['comment'], ENT_NOQUOTES | ENT_IGNORE)."\n";
+          $message .= "💬 ".addslashes($eventData['comment']['comment'])."\n";
       }
 
       elseif ($eventName === TaskFileModel::EVENT_CREATE and $signal_forward_attachments)  // If attachment available
@@ -194,11 +194,11 @@ class Signal extends Base implements NotificationInterface
 
       if ($this->configModel->get('application_url') !== '')
       {
-          $message .= "📝 ".htmlspecialchars($task_title, ENT_NOQUOTES | ENT_IGNORE) . ": ".$task_url;
+          $message .= "📝 ".addslashes($task_title) . ": ".$task_url;
       }
       else
       {
-          $message .= htmlspecialchars($task_title, ENT_NOQUOTES | ENT_IGNORE);
+          $message .= addslashes($task_title);
       }
 
       if (! empty($signal_java_home_path) and ! empty($signal_cli_path))
