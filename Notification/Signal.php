@@ -76,14 +76,14 @@ class Signal extends Base implements NotificationInterface
      */
     public function notifyProject(array $project, $eventName, array $eventData)
     {
-      $signal_cli_config = $this->userMetadataModel->get($user['id'], 'signal_cli_config', $this->configModel->get('signal_cli_config'));
-      $signal_cli_user = $this->userMetadataModel->get($user['id'], 'signal_cli_user', $this->configModel->get('signal_cli_user'));
-      $signal_to = "-g".$this->userMetadataModel->get($user['id'], 'signal_cli_group', $this->configModel->get('signal_cli_group'));
-      $signal_forward_attachments = $this->userMetadataModel->get($user['id'], 'signal_forward_attachments', $this->configModel->get('signal_forward_attachments'));
+      $signal_cli_config = $this->projectMetadataModel->get($project['id'], 'signal_cli_config', $this->configModel->get('signal_cli_config'));
+      $signal_cli_user = $this->projectMetadataModel->get($project['id'], 'signal_cli_user', $this->configModel->get('signal_cli_user'));
+      $signal_to = "-g".$this->projectMetadataModel->get($project['id'], 'signal_cli_group', $this->configModel->get('signal_cli_group'));
+      $signal_forward_attachments = $this->projectMetadataModel->get($project['id'], 'signal_forward_attachments', $this->configModel->get('signal_forward_attachments'));
 
-      $signal_cli_path = $this->userMetadataModel->get($user['id'], 'signal_cli_path', $this->configModel->get('signal_cli_path'));
-      $signal_tmp_dir = $this->userMetadataModel->get($user['id'], 'signal_tmp_dir', $this->configModel->get('signal_tmp_dir'));
-      $signal_java_home_path = $this->userMetadataModel->get($user['id'], 'signal_java_home_path', $this->configModel->get('signal_java_home_path'));
+      $signal_cli_path = $this->projectMetadataModel->get($project['id'], 'signal_cli_path', $this->configModel->get('signal_cli_path'));
+      $signal_tmp_dir = $this->projectMetadataModel->get($project['id'], 'signal_tmp_dir', $this->configModel->get('signal_tmp_dir'));
+      $signal_java_home_path = $this->projectMetadataModel->get($project['id'], 'signal_java_home_path', $this->configModel->get('signal_java_home_path'));
 
         if (! empty($signal_to) and ! empty($signal_cli_config) and ! empty($signal_cli_user))
         {
