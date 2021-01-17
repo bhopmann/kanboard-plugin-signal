@@ -40,12 +40,12 @@ class Plugin extends Base
 
     public function getPluginVersion()
     {
-        return '1.0.1';
+        return '1.0.2';
     }
 
     public function getPluginHomepage()
     {
-        return 'https://github.com/stratmaster/kanboard-plugin-signal';
+        return 'https://github.com/bhopmann/kanboard-plugin-signal';
     }
 
     public function getCompatibleVersion()

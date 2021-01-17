@@ -19,7 +19,7 @@
     <?= $this->form->text('signal_cli_group', $values) ?>
     <p class="form-help"><?= t('Group ID in base64 encoding') ?></p>
 
-    <p class="form-help"><a href="https://github.com/stratmaster/kanboard-plugin-signal" target="_blank"><?= t('Help on Signal integration') ?></a></p>
+    <p class="form-help"><a href="https://github.com/bhopmann/kanboard-plugin-signal" target="_blank"><?= t('Help on Signal integration') ?></a></p>
 
     <div class="form-actions">
         <input type="submit" value="<?= t('Save') ?>" class="btn btn-blue">

@@ -26,7 +26,7 @@
     <?= $this->form->hidden('signal_forward_attachments', array('signal_forward_attachments' => 0)) ?>
     <?= $this->form->checkbox('signal_forward_attachments', t('Sent attachments along with notification'), 1, isset($values['signal_forward_attachments']) && $values['signal_forward_attachments'] == 1) ?>
 
-    <p class="form-help"><a href="https://github.com/stratmaster/kanboard-plugin-signal" target="_blank"><?= t('Help on Signal integration') ?></a></p>
+    <p class="form-help"><a href="https://github.com/bhopmann/kanboard-plugin-signal" target="_blank"><?= t('Help on Signal integration') ?></a></p>
 
     <div class="form-actions">
         <input type="submit" value="<?= t('Save') ?>" class="btn btn-blue">
